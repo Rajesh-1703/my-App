@@ -1,0 +1,33 @@
+<div class="top">
+<button (click)="create()">create</button>
+<button (click)="dispaly()">dispaly</button> 
+<button (click)="hike()">20% hike</button>
+
+<button (click)="packLH()">packageLH</button>
+<button (click)="packHL()">packageHL</button>
+<button (click)="expLH()">expLH</button>
+<button (click)="expHL()">expHL</button>
+<button (click)="totalCost()">total expenditure</button>
+<button (click)="totalEmp()">total emp <h5><mark>{{totalitems}}</mark></h5></button>
+<input type="text" placeholder="search" [(ngModel)]=" employeesearchName" (keyup)="search()"><br>
+<br>
+<label for="">name</label>
+<input type="text" [(ngModel)]=" employeeName" ><br>
+<label for="">experience</label>
+<input type="number"  [(ngModel)]="employeeExperience"><br>
+<label for="">package</label>
+<input type="number" [(ngModel)]="employeepackage" ><br>
+<label for="">role</label>
+<input type="text" [(ngModel)]="employeerole"><br>
+
+</div>
+<div class="bottom">
+    <div class="card" *ngFor="let employee of employees let i=index">
+           <h4>Emp.NO:{{i+1}}</h4>
+          <h5>name :{{employee.name}}</h5>
+          <h5>experience :{{employee.experience}}</h5>
+          <h5>package :{{employee.package}}</h5>
+          <h5>role :{{employee.role}}</h5>
+          <button (click)="del(i)">delete</button>
+    </div>
+</div>

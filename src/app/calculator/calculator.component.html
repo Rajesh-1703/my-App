@@ -1,0 +1,19 @@
+<div class="parent">
+    <div class="child">
+<label for="">number1:</label>
+<input type="number" [(ngModel)]="n1" ><br>
+
+
+<label for="">number2:</label>
+<input type="number" [(ngModel)]="n2"><br><br>
+<div class="but">
+<button [disabled]="n1==0 || n2==0" (click)="cal()">sum</button>
+<button [disabled]="n1==0 || n2==0" (click)="sub()">sub</button>
+<button [disabled]="n1==0 || n2==0" (click)="mul()">mul</button>
+<button [disabled]="n1==0 || n2==0" (click)="div()">div</button>
+
+
+</div>
+<h1>result is {{r}}</h1>
+       </div>
+</div>

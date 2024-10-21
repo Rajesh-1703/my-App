@@ -1,0 +1,57 @@
+<br><br>
+<input type="text" placeholder="search" [(ngModel)]="term" (keyup)="search()">
+ <br><br>
+ <label>column</label>
+ <select [(ngModel)]="column">
+    <option>account_name</option>
+    <option>available_balance</option>
+    <option>account_number</option>
+    <option>city</option>
+    <option>id</option>
+ </select>
+ 
+ <label>order</label>
+ <select [(ngModel)]="order">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+ </select>
+
+ <button (click)="sort()">sort</button>
+
+ <br><br>
+ <select [(ngModel)]="page" (change)="paged()">
+   <option>1</option>
+   <option>2</option>
+   <option>3</option>
+   <option>4</option>
+ </select>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>account_number</th>
+            <th>city</th>
+            <th>profie_picture</th>
+            <th>id</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts">
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account.account_number}}</td>
+            <td>{{account.city}}</td>
+            <td>
+                <img src="{{account.profie_picture}}" alt="" width="150px" height="100px">
+            </td>
+            <td>{{account.id}}</td>
+            <td>
+                <button routerLink="../account-details/{{account.id}}">view</button>
+                <button (click)="del(account.id)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

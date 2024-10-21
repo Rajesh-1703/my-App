@@ -1,0 +1,73 @@
+
+/* Form Container */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Error Messages */
+.error {
+  color: red;
+  font-size: 12px;
+  text-transform: capitalize;
+  
+}
+
+/* Form Sections */
+div[formGroupName],
+div[formArrayName] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Student Marks Section */
+h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+br {
+  margin-bottom: 10px;
+}

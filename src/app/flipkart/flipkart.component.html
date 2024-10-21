@@ -1,0 +1,43 @@
+<label for="">name</label>
+<input type="text" [(ngModel)]=" productname"><br>
+<label for="">price</label>
+<input type="text"[(ngModel)]=" productprice"><br>
+<label for="">rating</label>
+<input type="number"[(ngModel)]=" productrating"><br>
+<label for="">delivery date</label>
+<input type="date"[(ngModel)]="productdeliverydate "><br>
+
+<label for="">free delivery</label>
+<input type="radio" name="fd" value="true" [(ngModel)]="productfreedelivery">
+<label for="">yes</label>
+<input type="radio" name="fd" value="false"  [(ngModel)]="productfreedelivery">
+<label for="">no</label><br>
+
+<button (click)="addTocart()">add to cart</button>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>product name</th>
+            <th>price</th>
+            <th>rating</th>
+            <th>delivery date</th>
+            <th>free delivery</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products let i=index">
+            <td>{{i+1}}</td>
+             <td>{{product.name}}</td>
+             <td>{{product.price}}</td>
+             <td>{{product.rating}}</td>
+             <td>{{product.date|date:'yyyy-MM-dd'}}</td>
+             <td>{{product.freedelivery}}</td>
+             <td>
+                <button (click)="del(i)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

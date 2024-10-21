@@ -1,0 +1,57 @@
+<h1>event regitration</h1>
+<label for="">name:</label>
+<input type="text" [(ngModel)]="name">
+<button (click)="sub()">submit</button>
+<h1>registred users</h1>
+<ol>
+    <li *ngFor="let name of names" >{{name}}</li>
+</ol>
+<button (click)="del()">delete</button>
+
+<hr><hr>
+<h1>student regitration</h1>
+<label for="">name</label>
+<input type="text" [(ngModel)]="studentname">
+<label for="">age</label>
+<input type="number"[(ngModel)]="studentage">
+<button (click)="create()">create</button>
+<h1>total students</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="clear()">clear</button>
+
+<hr><hr>
+<h1>clg details</h1>
+<label for="">clgname</label>
+<input type="text"[(ngModel)]="clgname">
+<label for="">rank</label>
+<input type="number"[(ngModel)]="rank">
+<button (click)="get()">get</button>
+<h1>clg-raks</h1>
+<table border="2">
+    <thead>
+        <tr>
+            <th>clgname</th>
+            <th>rank</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let clg of clgs">
+            <td>{{clg.name}}</td>
+            <td>{{clg.r}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="set()">set</button>

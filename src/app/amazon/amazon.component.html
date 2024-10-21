@@ -1,0 +1,67 @@
+<div class="top">
+    <div class="right">
+<input type="text" placeholder="search" [(ngModel)]="category" (keyup)="search()" >
+<button (click)="freeDV()">only free delivery</button>
+<br><br>
+<button (click)="priceLH()">price low to high</button>
+<button (click)="priceHL()">price high to low</button>
+<button (click)="ratingLH()">rating low to high</button>
+<button (click)="ratingHL()">rating high to low</button><br><br>
+
+<button (click)="discount()">apply 50% discount</button>
+<button (click)="DLcharges()">price with delivery charges</button>
+<br><br>
+<button (click)="total()">total price</button>
+<!-- <button (click)="cartItems()">total cart items</button> -->
+ <!-- <mark>{{products.length}}</mark> -->
+ <button (click)="cartItems()">
+    Total cart items: <mark>{{ items }}</mark>
+  </button>
+</div>
+<div class="left">
+     <label for="">name</label>
+     <input type="text" [(ngModel)]="name"><br>
+     <label for="">category</label>
+     <input type="text" [(ngModel)]="category"><br>
+     <label for="">price</label>
+     <input type="number" [(ngModel)]="price"><br>
+     <label for="">rating</label>
+     <input type="number" [(ngModel)]="rating"><br><br>
+     <label for="">freedelivery:</label>
+     <input type="radio" name="fd" value="true" [(ngModel)]="freedelivery">
+     <label for="">yes</label>
+     <input type="radio" name="fd"value="false" [(ngModel)]="freedelivery">
+     <label for="">no</label><br>
+     <button (click)="addCart()">add to cart</button>
+</div>
+</div>
+<br>
+
+<div class="bottom">
+<table>
+    <thead border="1">
+        <tr>
+            <th>S.NO</th>
+            <th>product name</th>
+            <th>category</th>
+            <th>price</th>
+            <th>rating</th>
+            <th>free delivery</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products let i=index">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.rating}}</td>
+            <td>{{product.freedelivery}}</td>
+            <td><button (click)="delete(i)">delete</button></td>
+
+                
+        </tr>
+    </tbody>
+</table>
+</div>

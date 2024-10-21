@@ -1,0 +1,41 @@
+<div class="parent">
+    <div class="top">
+        <input type="text" placeholder="serch" [(ngModel)]="item" (keyup)="search()">
+
+        <label for="">column</label>
+        <input type="text" [(ngModel)]="column">
+        <label for="">order</label>
+        <input type="text" [(ngModel)]="order">
+        <button (click)="sort()">sort</button>
+        
+    </div>
+    <div class="bottom">
+        <div class="card" *ngFor="let student of students">
+            <div class="one">
+                <h1>{{student.school_name}}</h1> 
+            </div>
+            <div class="two">
+                <div class="details">
+                <h6>name:{{student.name}}</h6>
+                <h6>phone:{{student.phone}}</h6>
+                <h6>bod:{{student.dob}}</h6>
+                <h6>city:{{student.city}}</h6>
+                <h6>email:{{student.email}}</h6>
+            </div>
+            <div class="image">
+                <img src="https://loremflickr.com/640/480/people" alt="" width="100px" height="100px">
+                
+            </div>
+
+            </div>
+            <div class="three">
+                <h6>school city:{{student.school_city}}</h6>
+                <h6>school pin:{{student.school_pin}}</h6>
+                <button>view</button>
+                <button>edit</button>
+                <button>delete</button>
+            </div>
+        </div>
+    </div>
+
+</div>

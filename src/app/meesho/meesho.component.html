@@ -1,0 +1,17 @@
+<div class="parent">
+  
+    <div class="child" *ngFor="let item of items">
+          <div class="img">
+           
+             <img src="{{item.image}}" alt="" width="215px" height="200px">
+          </div>
+
+          <div class="description">
+        <h2>{{item.category}}</h2>
+        <p>{{item.title}}</p>
+       <p [ngStyle]="{'color': 'red'}">Rs.{{item.price}}</p>
+      
+    </div>
+    <div class="rate"> <p>{{item.rating.rate}}</p></div>
+    </div>
+</div>

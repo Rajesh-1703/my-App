@@ -1,0 +1,20 @@
+
+<div class="parent">
+    <form [formGroup]="loginform">
+    
+      
+     <label for="">email:</label>
+      <input type="email" placeholder="enter your email " formControlName="email">
+      
+     <label for="">password:</label>
+           <input type="password" placeholder="enter password" formControlName="password">  
+      
+          <button (click)="login()">login</button>
+
+          <a href="">forget password?</a>
+           <hr>
+           <button>create new account</button>
+        
+
+    </form>
+</div>

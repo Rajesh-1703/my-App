@@ -1,0 +1,3 @@
+<div class="a" *ngFor="let mail of mails">
+    <h4 [ngStyle]="{'color':mail.completed?'gray':'black'}">{{mail.id}}.{{mail.title}}</h4>
+</div>

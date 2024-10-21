@@ -1,0 +1,47 @@
+.parent{
+    width: 80vw;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width:30%;
+    height: 40%;
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+}
+.r{
+    width: 99%;
+    height: 30%;
+    background-color: blueviolet; 
+   position: relative;
+    bottom: 90%;
+    border-radius: 10px;
+}
+label{
+    text-transform: capitalize;
+}
+input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+button{
+    background-color: blue;
+    width: 100px;
+
+}
+
+.but{
+    display: flex;
+    justify-content:space-evenly;
+}

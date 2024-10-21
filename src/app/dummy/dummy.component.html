@@ -1,0 +1,100 @@
+
+<form [formGroup]="dummyform">
+    <label for="">Name:</label>
+    <input type="text" formControlName="name"><br>
+
+    <label for="">Class:</label>
+    <input type="number" formControlName="class">
+
+    <div *ngIf="dummyform.get('class')?.touched && dummyform.get('class')?.invalid">
+        <p class="error" *ngIf="dummyform.get('class')?.errors?.['required']">enter class</p>
+        <p class="error" *ngIf="dummyform.get('class')?.errors?.['min']">class min 0</p>
+        <p class="error" *ngIf="dummyform.get('class')?.errors?.['max']">class max 10th</p>
+    </div>
+
+    <br>
+
+    <label for="">FatherName:</label>
+    <input type="text" formControlName="fatherName"> <br>
+
+    <label for="">email:</label>
+    <input type="text" formControlName="email"> 
+    
+    <div *ngIf="dummyform.get('email')?.touched && dummyform.get('email')?.invalid">
+    <p class="error" *ngIf="dummyform.get('email')?.errors?.['required']">enter email id</p>
+    <p class="error" *ngIf="dummyform.get('email')?.errors?.['email']">invalid email</p>
+    </div>
+    <br>
+
+    <label for="">DOB:</label>
+    <input type="date" formControlName="dob"> <br>
+
+    <div formGroupName="address">
+        <!-- <label for="">Address</label><br> -->
+        <label for="">Addressline:</label>
+        <input type="text" formControlName=" addressLine"> <br>
+
+        <label for="">city:</label>
+        <input type="text" formControlName="city"> <br>
+
+        <label for="">state:</label>
+        <input type="text" formControlName="state"> 
+        <div *ngIf="dummyform.get('address')?.get('state')?.touched && dummyform.get('address')?.get('state')?.invalid">
+            <p class="error" *ngIf="dummyform.get('address')?.get('state')?.errors?.['required']">*mandatory</p>
+        </div>
+        
+        <br>
+
+        <label for="">pincode:</label>
+        <input type="number" formControlName="pincode"> <br>
+    </div>
+
+    <div formGroupName="company">
+           <label for="">name</label>
+           <input type="text" formControlName="name"><br>
+
+           <label for="">package</label>
+           <input type="number" formControlName="package">
+       <div *ngIf="dummyform.get('company')?.get('package')?.touched && dummyform.get('company')?.get('package')?.invalid">
+
+        <p class="error" *ngIf="dummyform.get('company')?.get('package')?.errors?.['min']">min 10LPA</p>
+        <p class="error" *ngIf="dummyform.get('company')?.get('package')?.errors?.['max']">max 25LPA</p>
+       <!-- <p class="error" *ngIf="dummyform.get('company')?.get('package')?.errors?.['min'] && dummyform.get('company')?.get('package')?.errors?.['max'] " >(package min.10LP& max.25LPA)</p> -->
+    </div>
+
+    </div><br><br><br>
+
+    <label for="">marks:</label>
+    <button (click)="addmarks()">addstudents</button>
+   
+    <div formArrayName="marks">
+        <div *ngFor="let mark of marksFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+
+
+                <h3>student Roll:{{i+1}}</h3>          
+                <label for="">class</label>
+                <input type="number" formControlName="class"><br>
+                
+                <label for="">year</label>
+                <input type="number" formControlName="year"><br>
+
+                <label for="">percentage</label>
+                <input type="number" formControlName="percentage">
+                
+                <div *ngIf="marksFormArray.controls[i]?.get('percentage')?.touched && marksFormArray.controls[i]?.get('percentage')?.invalid">
+                 <p class="error" *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['min']">min 0%</p>
+                 <p class="error" *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['max']">max 100%</p>
+                
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <button (click)="submit()">submit</button>
+</form>
